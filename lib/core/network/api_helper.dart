@@ -1,5 +1,6 @@
 import 'dart:async';   
 import 'package:dio/dio.dart';
+import 'package:itlala/core/network/api_const.dart';
 import 'api_response.dart';
 import 'retry_interceptor.dart';
 
@@ -13,7 +14,7 @@ class ApiHelper {
   static void init() {
     dio = Dio(BaseOptions(
       //متنساش تغير اللينك
-      baseUrl: 'https://api.themoviedb.org/3/',
+      baseUrl: ApiConst.baseUrl,
       receiveDataWhenStatusError: true,
     ));
 
@@ -26,9 +27,12 @@ class ApiHelper {
     required String path,
     Map<String, dynamic>? query,
     String? token,
+    String lang = 'ar',
   }) async {
     dio.options.headers = {
       'Authorization': token,
+      'lang': lang,
+      
       'Content-Type': 'application/json',
     };
 
@@ -43,12 +47,15 @@ class ApiHelper {
   // Handle POST request
   static Future<ApiResponse> postData({
     required String path,
+      String lang='ar',
     required Map<String, dynamic> data,
     Map<String, dynamic>? query,
+    
     String? token,
   }) async {
     dio.options.headers = {
       'Authorization': token,
+      'lang': lang,
       'Content-Type': 'application/json; charset=utf-8',
     };
 

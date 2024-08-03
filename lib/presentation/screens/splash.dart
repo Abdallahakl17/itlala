@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:itlala/core/router/app_routes.dart';
+import 'package:itlala/core/router/app_routes_name.dart';
 import 'package:itlala/core/utils/constant/app_colors.dart';
 import 'package:itlala/core/utils/constant/app_images.dart';
 import 'package:itlala/presentation/screens/onboarding.dart';
@@ -25,14 +27,12 @@ class _LogoScreenState extends State<LogoScreen> {
       });
     });
 
-    // Future.delayed(const Duration(seconds: 4), () {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (context) => OnboardingPage(),
-    //     ),
-    //   );
-    // });
+    Future.delayed(const Duration(seconds: 4), () {
+      Navigator.pushReplacementNamed(
+        context,
+        AppRouterName.onboarding,
+      );
+    });
   }
 
   @override
@@ -64,8 +64,10 @@ class _LogoScreenState extends State<LogoScreen> {
                   SizedBox(
                     width: 40.w,
                     child: Image.asset(
+                      
                       AppImages.logo,
-                      width: double.infinity,
+                      cacheHeight: 40.bitLength,
+                      cacheWidth: 40 .bitLength,
                     ),
                   ),
                   SizedBox(height: 10.h),

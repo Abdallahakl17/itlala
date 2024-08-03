@@ -24,7 +24,8 @@ dependencies:
   flutter_svg: ^2.0.9
   fluttertoast: ^8.2.5
   flutter_otp_text_field: ^1.1.1
-
+  equatable: ^2.0.5
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

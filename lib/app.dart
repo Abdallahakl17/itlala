@@ -1,5 +1,6 @@
  
 
+import 'package:itlala/core/router/app_routes.dart';
 import 'package:itlala/presentation/imports.dart';
 import 'package:itlala/presentation/screens/splash.dart';
 
@@ -18,8 +19,10 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
+            onGenerateRoute: AppRouter.generateRoute,
+            initialRoute: AppRouterName.splashView,
             themeMode: ThemeMode.system,
-            home: const LogoScreen(),
+            home:   LogoScreen(),
           );
         });
   }

@@ -4,8 +4,7 @@ import 'package:itlala/presentation/imports.dart';
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case AppRouterName.splashView:
-        return SizeTransition3(const LogoScreen());
+        
       case AppRouterName.onboarding:
         return SizeTransition3(const OnboardingPage());
       case AppRouterName.loginScreen:
